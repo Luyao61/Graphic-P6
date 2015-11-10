@@ -5,7 +5,6 @@
 #include <vector>
 #include <string>
 #include "Vector3.h"
-#include "Matrix4.h"
 #include "Drawable.h"
 
 struct Face
@@ -23,7 +22,6 @@ protected:
     //Storage vectors
     std::vector<Vector3*>* vertices;
     std::vector<Vector3*>* normals;
-    std::vector<Vector3*>* colors;
     std::vector<Face*>* faces;
     
     //Helper functions
@@ -33,40 +31,13 @@ protected:
     //Parse
     void parse(std::string&);
     
-    //for calculate the center
-    float xmax, ymax, xmid, ymid, xmin, ymin, zmin, zmax, zmid;
-    
-    //for default display scale
-    float scale_parameter;
-    
 public:
     
     OBJObject(std::string);
     virtual ~OBJObject(void);
     
-    virtual void draw(int ii);
+    virtual void draw(DrawData&);
     virtual void update(UpdateData&);
-    
-    /*******************************
-    void movex();
-    void moveX();
-    void movey();
-    void moveY();
-    void movez();
-    void moveZ();
-    void scaleS();
-    void scaleL();
-    void rotationClock();
-    void rotationCounter();
-    *********************************/
-    
-    void reset();
-    
-    void rotate(float x_old, float y_old, float x, float y, float width, float height);
-    void trans(float x_old, float y_old, float x, float y, float width, float height);
-    
-    void scaleS();
-    void scaleL();
     
 };
 

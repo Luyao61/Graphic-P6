@@ -28,13 +28,6 @@
 		D42FFC661AB68012006F8E9C /* Globals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D42FFC651AB68012006F8E9C /* Globals.cpp */; };
 		D4D588151ACE591500D1F802 /* OBJObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4D588131ACE591500D1F802 /* OBJObject.cpp */; };
 		D4FEE23F1AC895C6006CF92D /* MathTestBench.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4FEE23D1AC895C6006CF92D /* MathTestBench.cpp */; };
-		E0C1D4A31BC44F6200B4BDB2 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0C1D4A11BC44F6200B4BDB2 /* House.cpp */; };
-		E0F20FF71BE930D5003CA32B /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F20FF51BE930D5003CA32B /* Node.cpp */; };
-		E0F20FFA1BE9326A003CA32B /* Group.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F20FF81BE9326A003CA32B /* Group.cpp */; };
-		E0F20FFD1BE934D3003CA32B /* MatrixTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F20FFB1BE934D3003CA32B /* MatrixTransform.cpp */; };
-		E0F210001BE9389E003CA32B /* Geode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F20FFE1BE9389E003CA32B /* Geode.cpp */; };
-		E0F210031BE939BD003CA32B /* SphereFive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F210011BE939BD003CA32B /* SphereFive.cpp */; };
-		E0F210061BE93B7B003CA32B /* CubeFive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F210041BE93B7B003CA32B /* CubeFive.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,7 +45,7 @@
 /* Begin PBXFileReference section */
 		D40AFA7E1AD1E2E7008D61CC /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = SOURCE_ROOT; };
 		D40AFA7F1AD1E2E7008D61CC /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = SOURCE_ROOT; };
-		D42FFC1E1AAFC90E006F8E9C /* CSE167_P5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSE167_P5; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42FFC1E1AAFC90E006F8E9C /* CSE167 Spring 2015 Starter Code */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CSE167 Spring 2015 Starter Code"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42FFC2A1AAFCC9C006F8E9C /* Matrix4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix4.cpp; sourceTree = SOURCE_ROOT; };
 		D42FFC2B1AAFCC9C006F8E9C /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = SOURCE_ROOT; };
 		D42FFC2C1AAFCC9C006F8E9C /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = SOURCE_ROOT; };
@@ -90,20 +83,6 @@
 		D4D588141ACE591500D1F802 /* OBJObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBJObject.h; sourceTree = SOURCE_ROOT; };
 		D4FEE23D1AC895C6006CF92D /* MathTestBench.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathTestBench.cpp; sourceTree = SOURCE_ROOT; };
 		D4FEE23E1AC895C6006CF92D /* MathTestBench.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTestBench.h; sourceTree = SOURCE_ROOT; };
-		E0C1D4A11BC44F6200B4BDB2 /* House.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = House.cpp; sourceTree = SOURCE_ROOT; };
-		E0C1D4A21BC44F6200B4BDB2 /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House.h; sourceTree = SOURCE_ROOT; };
-		E0F20FF51BE930D5003CA32B /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = SOURCE_ROOT; };
-		E0F20FF61BE930D5003CA32B /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = SOURCE_ROOT; };
-		E0F20FF81BE9326A003CA32B /* Group.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Group.cpp; sourceTree = SOURCE_ROOT; };
-		E0F20FF91BE9326A003CA32B /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = SOURCE_ROOT; };
-		E0F20FFB1BE934D3003CA32B /* MatrixTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatrixTransform.cpp; sourceTree = SOURCE_ROOT; };
-		E0F20FFC1BE934D3003CA32B /* MatrixTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTransform.h; sourceTree = SOURCE_ROOT; };
-		E0F20FFE1BE9389E003CA32B /* Geode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Geode.cpp; sourceTree = SOURCE_ROOT; };
-		E0F20FFF1BE9389E003CA32B /* Geode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geode.h; sourceTree = SOURCE_ROOT; };
-		E0F210011BE939BD003CA32B /* SphereFive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereFive.cpp; sourceTree = SOURCE_ROOT; };
-		E0F210021BE939BD003CA32B /* SphereFive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphereFive.h; sourceTree = SOURCE_ROOT; };
-		E0F210041BE93B7B003CA32B /* CubeFive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CubeFive.cpp; sourceTree = SOURCE_ROOT; };
-		E0F210051BE93B7B003CA32B /* CubeFive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeFive.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +111,7 @@
 		D42FFC1F1AAFC90E006F8E9C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D42FFC1E1AAFC90E006F8E9C /* CSE167_P5 */,
+				D42FFC1E1AAFC90E006F8E9C /* CSE167 Spring 2015 Starter Code */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,56 +120,42 @@
 			isa = PBXGroup;
 			children = (
 				D42FFC631AB67F52006F8E9C /* main.cpp */,
-				E0F20FF61BE930D5003CA32B /* Node.h */,
-				E0F20FF51BE930D5003CA32B /* Node.cpp */,
-				E0F20FF91BE9326A003CA32B /* Group.h */,
-				E0F20FF81BE9326A003CA32B /* Group.cpp */,
-				E0F20FFC1BE934D3003CA32B /* MatrixTransform.h */,
-				E0F20FFB1BE934D3003CA32B /* MatrixTransform.cpp */,
-				E0F20FFF1BE9389E003CA32B /* Geode.h */,
-				E0F20FFE1BE9389E003CA32B /* Geode.cpp */,
-				E0F210011BE939BD003CA32B /* SphereFive.cpp */,
-				E0F210021BE939BD003CA32B /* SphereFive.h */,
-				E0F210051BE93B7B003CA32B /* CubeFive.h */,
-				E0F210041BE93B7B003CA32B /* CubeFive.cpp */,
-				D42FFC301AAFCC9C006F8E9C /* Window.h */,
 				D42FFC2C1AAFCC9C006F8E9C /* Window.cpp */,
-				D42FFC5F1AB672A8006F8E9C /* Globals.h */,
+				D42FFC301AAFCC9C006F8E9C /* Window.h */,
 				D42FFC651AB68012006F8E9C /* Globals.cpp */,
-				D42FFC2F1AAFCC9C006F8E9C /* Cube.h */,
+				D42FFC5F1AB672A8006F8E9C /* Globals.h */,
 				D42FFC2D1AAFCC9C006F8E9C /* Cube.cpp */,
-				D4D588141ACE591500D1F802 /* OBJObject.h */,
-				D4D588131ACE591500D1F802 /* OBJObject.cpp */,
-				D42FFC3F1AAFCF71006F8E9C /* Camera.h */,
-				D42FFC3D1AAFCF71006F8E9C /* Camera.cpp */,
-				D42FFC3A1AAFCF71006F8E9C /* Color.h */,
-				D42FFC391AAFCF71006F8E9C /* Color.cpp */,
-				D42FFC451AAFCF71006F8E9C /* Light.h */,
-				D42FFC431AAFCF71006F8E9C /* Light.cpp */,
-				D42FFC4F1AAFCF71006F8E9C /* Material.h */,
-				D42FFC4E1AAFCF71006F8E9C /* Material.cpp */,
-				D42FFC3E1AAFCF71006F8E9C /* Drawable.h */,
-				D42FFC3B1AAFCF71006F8E9C /* Drawable.cpp */,
-				D42FFC4B1AAFCF71006F8E9C /* DrawData.h */,
-				D42FFC4A1AAFCF71006F8E9C /* DrawData.cpp */,
-				D42FFC461AAFCF71006F8E9C /* Sphere.h */,
+				D42FFC2F1AAFCC9C006F8E9C /* Cube.h */,
 				D42FFC441AAFCF71006F8E9C /* Sphere.cpp */,
-				D42FFC491AAFCF71006F8E9C /* UpdateData.h */,
+				D42FFC461AAFCF71006F8E9C /* Sphere.h */,
+				D4D588131ACE591500D1F802 /* OBJObject.cpp */,
+				D4D588141ACE591500D1F802 /* OBJObject.h */,
+				D42FFC3D1AAFCF71006F8E9C /* Camera.cpp */,
+				D42FFC3F1AAFCF71006F8E9C /* Camera.h */,
+				D42FFC391AAFCF71006F8E9C /* Color.cpp */,
+				D42FFC3A1AAFCF71006F8E9C /* Color.h */,
+				D42FFC431AAFCF71006F8E9C /* Light.cpp */,
+				D42FFC451AAFCF71006F8E9C /* Light.h */,
+				D42FFC4E1AAFCF71006F8E9C /* Material.cpp */,
+				D42FFC4F1AAFCF71006F8E9C /* Material.h */,
+				D42FFC3B1AAFCF71006F8E9C /* Drawable.cpp */,
+				D42FFC3E1AAFCF71006F8E9C /* Drawable.h */,
+				D42FFC4A1AAFCF71006F8E9C /* DrawData.cpp */,
+				D42FFC4B1AAFCF71006F8E9C /* DrawData.h */,
 				D42FFC481AAFCF71006F8E9C /* UpdateData.cpp */,
-				D42FFC4D1AAFCF71006F8E9C /* Texture.h */,
+				D42FFC491AAFCF71006F8E9C /* UpdateData.h */,
 				D42FFC4C1AAFCF71006F8E9C /* Texture.cpp */,
-				D40AFA7F1AD1E2E7008D61CC /* Shader.h */,
+				D42FFC4D1AAFCF71006F8E9C /* Texture.h */,
 				D40AFA7E1AD1E2E7008D61CC /* Shader.cpp */,
-				D42FFC3C1AAFCF71006F8E9C /* Vector3.h */,
+				D40AFA7F1AD1E2E7008D61CC /* Shader.h */,
 				D42FFC381AAFCF71006F8E9C /* Vector3.cpp */,
-				D42FFC511AAFCF71006F8E9C /* Vector4.h */,
+				D42FFC3C1AAFCF71006F8E9C /* Vector3.h */,
 				D42FFC501AAFCF71006F8E9C /* Vector4.cpp */,
-				D42FFC2B1AAFCC9C006F8E9C /* Matrix4.h */,
+				D42FFC511AAFCF71006F8E9C /* Vector4.h */,
 				D42FFC2A1AAFCC9C006F8E9C /* Matrix4.cpp */,
-				D4FEE23E1AC895C6006CF92D /* MathTestBench.h */,
+				D42FFC2B1AAFCC9C006F8E9C /* Matrix4.h */,
 				D4FEE23D1AC895C6006CF92D /* MathTestBench.cpp */,
-				E0C1D4A21BC44F6200B4BDB2 /* House.h */,
-				E0C1D4A11BC44F6200B4BDB2 /* House.cpp */,
+				D4FEE23E1AC895C6006CF92D /* MathTestBench.h */,
 			);
 			path = "CSE167 Spring 2015 Starter Code";
 			sourceTree = "<group>";
@@ -198,9 +163,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D42FFC1D1AAFC90E006F8E9C /* CSE167_P5 */ = {
+		D42FFC1D1AAFC90E006F8E9C /* CSE167 Spring 2015 Starter Code */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D42FFC271AAFC90E006F8E9C /* Build configuration list for PBXNativeTarget "CSE167_P5" */;
+			buildConfigurationList = D42FFC271AAFC90E006F8E9C /* Build configuration list for PBXNativeTarget "CSE167 Spring 2015 Starter Code" */;
 			buildPhases = (
 				D42FFC1A1AAFC90E006F8E9C /* Sources */,
 				D42FFC1B1AAFC90E006F8E9C /* Frameworks */,
@@ -210,9 +175,9 @@
 			);
 			dependencies = (
 			);
-			name = CSE167_P5;
+			name = "CSE167 Spring 2015 Starter Code";
 			productName = "CSE167 Spring 2015 Starter Code";
-			productReference = D42FFC1E1AAFC90E006F8E9C /* CSE167_P5 */;
+			productReference = D42FFC1E1AAFC90E006F8E9C /* CSE167 Spring 2015 Starter Code */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -221,10 +186,10 @@
 		D42FFC161AAFC90E006F8E9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = RexWest;
 			};
-			buildConfigurationList = D42FFC191AAFC90E006F8E9C /* Build configuration list for PBXProject "CSE167_P5" */;
+			buildConfigurationList = D42FFC191AAFC90E006F8E9C /* Build configuration list for PBXProject "CSE167 Spring 2015 Starter Code" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -236,7 +201,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D42FFC1D1AAFC90E006F8E9C /* CSE167_P5 */,
+				D42FFC1D1AAFC90E006F8E9C /* CSE167 Spring 2015 Starter Code */,
 			);
 		};
 /* End PBXProject section */
@@ -248,25 +213,18 @@
 			files = (
 				D42FFC661AB68012006F8E9C /* Globals.cpp in Sources */,
 				D42FFC5C1AAFCF71006F8E9C /* Texture.cpp in Sources */,
-				E0C1D4A31BC44F6200B4BDB2 /* House.cpp in Sources */,
-				E0F210031BE939BD003CA32B /* SphereFive.cpp in Sources */,
 				D42FFC5A1AAFCF71006F8E9C /* UpdateData.cpp in Sources */,
 				D42FFC5B1AAFCF71006F8E9C /* DrawData.cpp in Sources */,
 				D42FFC581AAFCF71006F8E9C /* Light.cpp in Sources */,
 				D42FFC331AAFCC9C006F8E9C /* Cube.cpp in Sources */,
 				D4D588151ACE591500D1F802 /* OBJObject.cpp in Sources */,
 				D42FFC541AAFCF71006F8E9C /* Drawable.cpp in Sources */,
-				E0F20FFD1BE934D3003CA32B /* MatrixTransform.cpp in Sources */,
 				D42FFC531AAFCF71006F8E9C /* Color.cpp in Sources */,
 				D42FFC521AAFCF71006F8E9C /* Vector3.cpp in Sources */,
-				E0F20FFA1BE9326A003CA32B /* Group.cpp in Sources */,
 				D42FFC641AB67F52006F8E9C /* main.cpp in Sources */,
-				E0F210001BE9389E003CA32B /* Geode.cpp in Sources */,
-				E0F210061BE93B7B003CA32B /* CubeFive.cpp in Sources */,
 				D42FFC551AAFCF71006F8E9C /* Camera.cpp in Sources */,
 				D42FFC321AAFCC9C006F8E9C /* Window.cpp in Sources */,
 				D42FFC5D1AAFCF71006F8E9C /* Material.cpp in Sources */,
-				E0F20FF71BE930D5003CA32B /* Node.cpp in Sources */,
 				D4FEE23F1AC895C6006CF92D /* MathTestBench.cpp in Sources */,
 				D42FFC5E1AAFCF71006F8E9C /* Vector4.cpp in Sources */,
 				D42FFC591AAFCF71006F8E9C /* Sphere.cpp in Sources */,
@@ -295,7 +253,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -352,39 +309,21 @@
 		D42FFC281AAFC90E006F8E9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"HEADER_SEARCH_PATHS[arch=*]" = (
-					"\"/opt/X11/include\"",
-					"\"/usr/local/include\"",
-				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = (
-					"\"/opt/X11/lib\"",
-					"\"/usr/local/lib\"",
-				);
-				"OTHER_LDFLAGS[arch=*]" = "-lGLUT";
-				PRODUCT_NAME = CSE167_P5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		D42FFC291AAFC90E006F8E9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"HEADER_SEARCH_PATHS[arch=*]" = (
-					"\"/opt/X11/include\"",
-					"\"/usr/local/include\"",
-				);
-				"LIBRARY_SEARCH_PATHS[arch=*]" = (
-					"\"/opt/X11/lib\"",
-					"\"/usr/local/lib\"",
-				);
-				"OTHER_LDFLAGS[arch=*]" = "-lGLUT";
-				PRODUCT_NAME = CSE167_P5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D42FFC191AAFC90E006F8E9C /* Build configuration list for PBXProject "CSE167_P5" */ = {
+		D42FFC191AAFC90E006F8E9C /* Build configuration list for PBXProject "CSE167 Spring 2015 Starter Code" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D42FFC251AAFC90E006F8E9C /* Debug */,
@@ -393,7 +332,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D42FFC271AAFC90E006F8E9C /* Build configuration list for PBXNativeTarget "CSE167_P5" */ = {
+		D42FFC271AAFC90E006F8E9C /* Build configuration list for PBXNativeTarget "CSE167 Spring 2015 Starter Code" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D42FFC281AAFC90E006F8E9C /* Debug */,

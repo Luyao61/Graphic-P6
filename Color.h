@@ -7,7 +7,7 @@ class Color
 protected:
     
     float c[4];
-    unsigned char u8bit = 0xFF;
+    static const unsigned char u8bit = 0xFF;
     
 public:
     
