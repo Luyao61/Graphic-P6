@@ -13,6 +13,7 @@ public:
     static void reshapeCallback(int, int);
     static void displayCallback(void);
     
+    static void processNormalKeys(unsigned char key, int x, int y);    
 };
 
 #endif

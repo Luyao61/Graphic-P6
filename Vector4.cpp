@@ -48,7 +48,12 @@ Vector4 Vector4::add(Vector4& a)
     Vector4 b;
     
     //
-    
+    float m0 = *(this->ptr()) + *(a.ptr());
+    float m1 = *(this->ptr() +1) + *(a.ptr()+1);
+    float m2 = *(this->ptr() +2) + *(a.ptr()+2);
+    float m3 = *(this->ptr() +3) + *(a.ptr()+3);
+
+    b = *new Vector4(m0,m1,m2,m3);
     return b;
 }
 
@@ -62,6 +67,12 @@ Vector4 Vector4::subtract(Vector4& a)
     Vector4 b;
     
     //
+    float m0 = *(this->ptr()) - *(a.ptr());
+    float m1 = *(this->ptr() +1) - *(a.ptr()+1);
+    float m2 = *(this->ptr() +2) - *(a.ptr()+2);
+    float m3 = *(this->ptr() +3) - *(a.ptr()+3);
+    
+    b = *new Vector4(m0,m1,m2,m3);
     
     return b;
 }
@@ -76,7 +87,12 @@ Vector4 Vector4::dehomogenize()
     Vector4 b;
     
     //
-    
+    if(m[3] == 0){
+        b = *new Vector4(*(this->ptr()), *(this->ptr()+1), *(this->ptr()+2));
+    }
+    else{
+        b = *new Vector4(m[0]/m[3], m[1]/m[3], m[2]/m[3]);
+    }
     return b;
 }
 

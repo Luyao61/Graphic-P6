@@ -3,6 +3,8 @@
 
 #include "Matrix4.h"
 #include "Vector3.h"
+#include "Vector4.h"
+#include <math.h>
 
 class Camera
 {
@@ -12,6 +14,7 @@ protected:
     
     Matrix4 c;   //Camera Matrix
     Matrix4 ci;  //Inverse of Camera Matrix
+    
     
 public:
     
@@ -28,6 +31,8 @@ public:
     Matrix4& getInverseMatrix(void);
     
     void set(Vector3&, Vector3&, Vector3&);
+    
+    void reset(void);
     
 };
 

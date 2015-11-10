@@ -6,6 +6,7 @@
 #include "Light.h"
 #include "DrawData.h"
 #include "UpdateData.h"
+#include "Texture.h"
 
 class Globals
 {

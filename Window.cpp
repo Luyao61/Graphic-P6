@@ -28,6 +28,17 @@ void Window::initialize(void)
     //Setup the cube's material properties
     Color color(0x23ff27ff);
     Globals::cube.material.color = color;
+    
+    //Texture *front = new Texture("Sahara_ft.ppm");
+
+    //front->bind();
+    glEnable(GL_TEXTURE_2D);   // enable texture mapping
+    glShadeModel(GL_SMOOTH);   // enable smooth shading
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);  // black background
+    glClearDepth(1.0f);        // depth buffer setup
+    glEnable(GL_DEPTH_TEST);   // enables depth testing
+    glDepthFunc(GL_LEQUAL);    // configure depth testing
+    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);          // really nice perspective calculations
 }
 
 //----------------------------------------------------------------------------
@@ -39,10 +50,10 @@ void Window::idleCallback()
     Globals::updateData.dt = 1.0/60.0;// 60 fps
     
     //Rotate cube; if it spins too fast try smaller values and vice versa
-    Globals::cube.spin(0.0005);
+    //Globals::cube.spin(0.0005);
     
     //Call the update function on cube
-    Globals::cube.update(Globals::updateData);
+    //Globals::cube.update(Globals::updateData);
     
     //Call the display routine to draw the cube
     displayCallback();
@@ -101,7 +112,43 @@ void Window::displayCallback()
 
 
 //TODO: Keyboard callbacks!
-
+void Window::processNormalKeys(unsigned char key, int x, int y) {
+    if (key == 27) {
+        exit(0);
+    }
+    else if(key == 'a' || key == 'A'){
+        Matrix4 r;
+        r.makeRotateY(0.1);
+        Globals::camera.e = r * Globals::camera.e;
+        Globals::camera.update();
+    }
+    else if(key == 'd' || key == 'D'){
+        Matrix4 r;
+        r.makeRotateY(-0.1);
+        Globals::camera.e = r * Globals::camera.e;
+        Globals::camera.update();
+    }
+    else if(key == 'w' || key == 'W'){
+        /*
+        Matrix4 r;
+        r.makeScale(0.9);
+        Globals::camera.e = r * Globals::camera.e;
+        Globals::camera.update();
+         */
+    }
+    else if(key == 's' || key == 'S'){
+        /*
+        Matrix4 r;
+        r.makeScale(1.1);
+        Globals::camera.e = r * Globals::camera.e;
+        Globals::camera.update();
+         */
+    }
+    else if(key == 'r' || key == 'R'){
+        Globals::camera.e = Vector3(0,0,20);
+        Globals::camera.update();
+    }
+}
 //TODO: Function Key callbacks!
 
 //TODO: Mouse callbacks!

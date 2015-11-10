@@ -46,7 +46,12 @@ float& Vector3::operator [] (int loc)
 Vector3 Vector3::add(Vector3 a)
 {
     Vector3 b;
+    float x = *this->ptr() + *a.ptr();
+    float y = *(this->ptr()+1) + *(a.ptr()+1);
+    float z = *(this->ptr()+2) + *(a.ptr()+2);
+
     
+    b = *new Vector3(x, y, z);
     //
     
     return b;
@@ -62,6 +67,13 @@ Vector3 Vector3::subtract(Vector3 a)
     Vector3 b;
     
     //
+    float x = *this->ptr() - *a.ptr();
+    float y = *(this->ptr()+1) - *(a.ptr()+1);
+    float z = *(this->ptr()+2) - *(a.ptr()+2);
+    
+    
+    b = *new Vector3(x, y, z);
+
     
     return b;
 }
@@ -76,6 +88,13 @@ Vector3 Vector3::negate(void)
     Vector3 b;
     
     //
+    float x = -*this->ptr();
+    float y = -*(this->ptr()+1);
+    float z = -*(this->ptr()+2);
+    
+    
+    b = *new Vector3(x, y, z);
+
     
     return b;
 }
@@ -85,6 +104,13 @@ Vector3 Vector3::scale(float s)
     Vector3 b;
     
     //
+    float x = *this->ptr() * s;
+    float y = *(this->ptr()+1) * s;
+    float z = *(this->ptr()+2) * s;
+    
+    
+    b = *new Vector3(x, y, z);
+
     
     return b;
 }
@@ -94,6 +120,12 @@ Vector3 Vector3::multiply(float a)
     Vector3 b;
     
     //
+    float x = *this->ptr() * a;
+    float y = *(this->ptr()+1) * a;
+    float z = *(this->ptr()+2) * a;
+    
+    
+    b = *new Vector3(x, y, z);
     
     return b;
 }
@@ -108,6 +140,13 @@ Vector3 Vector3::multiply(Vector3 a)
     Vector3 b;
     
     //Coomponent-wise multiplication
+    float x = *this->ptr() * *a.ptr();
+    float y = *(this->ptr()+1) * *(a.ptr()+1);
+    float z = *(this->ptr()+2) * *(a.ptr()+2);
+    
+    
+    b = *new Vector3(x, y, z);
+
     
     return b;
 }
@@ -121,15 +160,30 @@ Vector3 Vector3::operator * (Vector3 a)
 float Vector3::dot(Vector3 a)
 {
     //
-    
-    return 0.0;
+    float x = *this->ptr() * *a.ptr();
+    float y = *(this->ptr()+1) * *(a.ptr()+1);
+    float z = *(this->ptr()+2) * *(a.ptr()+2);
+
+    return x+y+z;
 }
 
 Vector3 Vector3::cross(Vector3 a)
 {
+    float ux,uy,uz,vx,vy,vz;
     Vector3 b;
+    ux = *this->ptr();
+    uy = *(this->ptr()+1);
+    uz = *(this ->ptr()+2);
     
-    //
+    vx = *a.ptr();
+    vy = *(a.ptr()+1);
+    vz = *(a.ptr()+2);
+    
+    float x = uy*vz-uz*vy;
+    float y = uz*vx-ux*vz;
+    float z = ux*vy-uy*vx;
+    
+    b = *new Vector3(x,y,z);
     
     return b;
 }
@@ -137,22 +191,34 @@ Vector3 Vector3::cross(Vector3 a)
 float Vector3::angle(Vector3 a)
 {
     //
+    return acos( this->dot(a) / (this->magnitude() * a.magnitude()));
     
-    return 0.0;
 }
 
 float Vector3::magnitude(void)
 {
-    //
+    float x,y,z;
+    x = *this->ptr();
+    y = *(this->ptr()+1);
+    z = *(this ->ptr()+2);
     
-    return 0.0;
+    return sqrt(x*x+y*y+z*z);
+    
 }
 
 Vector3 Vector3::normalize(void)
 {
     Vector3 b;
-    
-    //
+    float x,y,z;
+    if (this->magnitude() != 0) {
+        x = *this->ptr() / this->magnitude();
+        y = *(this->ptr()+1) / this->magnitude();
+        z = *(this ->ptr()+2) / this->magnitude();
+        b= *new Vector3(x,y,z);
+    }
+    else{
+        b = *new Vector3(0.0,0.0,0.0);
+    }
     
     return b;
 }
