@@ -58,7 +58,7 @@ void Window::reshapeCallback(int w, int h)
     glViewport(0, 0, w, h);                                          //Set new viewport size
     glMatrixMode(GL_PROJECTION);                                     //Set the OpenGL matrix mode to Projection
     glLoadIdentity();                                                //Clear the projection matrix by loading the identity
-    gluPerspective(60.0, double(width)/(double)height, 1.0, 1000.0); //Set perspective projection viewing frustum
+    gluPerspective(60.0, double(width)/(double)height, 1.0, 10000.0); //Set perspective projection viewing frustum
 }
 
 //----------------------------------------------------------------------------
@@ -119,20 +119,20 @@ void Window::processNormalKeys(unsigned char key, int x, int y) {
         Globals::camera.update();
     }
     else if(key == 'w' || key == 'W'){
-        /*
+        
         Matrix4 r;
-        r.makeScale(0.9);
+        r.makeRotateX(-0.1);
         Globals::camera.e = r * Globals::camera.e;
         Globals::camera.update();
-         */
+        
     }
     else if(key == 's' || key == 'S'){
-        /*
+        
         Matrix4 r;
-        r.makeScale(1.1);
+        r.makeRotateX(0.1);
         Globals::camera.e = r * Globals::camera.e;
         Globals::camera.update();
-         */
+        
     }
     else if(key == 'r' || key == 'R'){
         Globals::camera.e = Vector3(0,0,20);

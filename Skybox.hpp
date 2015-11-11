@@ -20,7 +20,7 @@ protected:
     
 public:
     Matrix4 toWorld;
-    Texture * front, *back, *top, *bot, *left, *right;
+    Texture front, back, top, bot, left, right;
     
     Skybox(void);
     virtual ~Skybox(void);

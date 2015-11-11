@@ -14,12 +14,12 @@
 #endif
 
 Skybox::Skybox(){
-    front = new Texture("skybox_water222_front.ppm");
-    back = new Texture("skybox_water222_back.ppm");
-    top = new Texture("skybox_water222_top.ppm");
-    bot = new Texture("skybox_water222_base.ppm");
-    left = new Texture("skybox_water222_left.ppm");
-    right = new Texture("skybox_water222_right.ppm");
+    front = *new Texture("ac_ft.ppm");
+    back = *new Texture("ac_bk.ppm");
+    top = *new Texture("ac_up.ppm");
+    bot = *new Texture("ac_dn.ppm");
+    left = *new Texture("ac_lf.ppm");
+    right = *new Texture("ac_rt.ppm");
     toWorld.identity();
 }
 Skybox::~Skybox(){
@@ -27,8 +27,7 @@ Skybox::~Skybox(){
 }
 
 void Skybox::draw(){
-    front->bind();
-    float halfSize = 10/2.0;
+    float halfSize = 1200/2.0;
     
     
     //Set the OpenGL Matrix mode to ModelView (used when drawing geometry)
@@ -43,22 +42,21 @@ void Skybox::draw(){
     //These are special calls that 'freeze' many internal states of OpenGL.
     //Once the glBegin state is active many of the calls made to OpenGL (like glMultMatrixf) will be IGNORED!
     //As a good habit, only call glBegin just before you need to draw, and call end just after you finish
-    front->bind();
+    front.bind();
     glBegin(GL_QUADS);
     // Draw front face:
     glNormal3f(0.0, 0.0, 1.0);
     glTexCoord2f(0, 1);
-    glVertex3f(-halfSize, -halfSize,  halfSize);
-    glTexCoord2f(1, 1);
     glVertex3f( halfSize, -halfSize,  halfSize);
+    glTexCoord2f(1, 1);
+    glVertex3f(-halfSize, -halfSize,  halfSize);
     glTexCoord2f(1, 0);
-    glVertex3f( halfSize,  halfSize,  halfSize);
-    glTexCoord2f(0, 0);
     glVertex3f(-halfSize,  halfSize,  halfSize);
+    glTexCoord2f(0, 0);
+    glVertex3f( halfSize,  halfSize,  halfSize);
     glEnd();
-    
+    back.bind();
     glBegin(GL_QUADS);
-    back->bind();
     // Draw back face:
     glNormal3f(0.0, 0.0, -1.0);
     glTexCoord2f(0, 1);
@@ -71,24 +69,24 @@ void Skybox::draw(){
     glVertex3f(-halfSize,  halfSize,  -halfSize);
     glEnd();
 
+    right.bind();
     glBegin(GL_QUADS);
-    right->bind();
     // Draw right side:
-    glNormal3f(0.0, 0.0, -1.0);
+    glNormal3f(1.0, 0.0, 0.0);
     glTexCoord2f(0, 1);
-    glVertex3f(halfSize,  -halfSize,  halfSize);
+    glVertex3f(halfSize,  -halfSize, -halfSize);
     glTexCoord2f(1, 1);
-    glVertex3f(halfSize,  -halfSize,  -halfSize);
+    glVertex3f(halfSize,  -halfSize,  halfSize);
     glTexCoord2f(1, 0);
-    glVertex3f(halfSize,   halfSize,   -halfSize);
+    glVertex3f(halfSize,   halfSize,  halfSize);
     glTexCoord2f(0, 0);
-    glVertex3f(halfSize,  halfSize,   halfSize);
+    glVertex3f(halfSize,  halfSize,   -halfSize);
     glEnd();
-
+    
+    left.bind();
     glBegin(GL_QUADS);
-    left->bind();
     // Draw left side:
-    glNormal3f(0.0, 0.0, -1.0);
+    glNormal3f(-1.0, 0.0, 0.0);
     glTexCoord2f(0, 1);
     glVertex3f(-halfSize, -halfSize,   halfSize);
     glTexCoord2f(1, 1);
@@ -99,31 +97,31 @@ void Skybox::draw(){
     glVertex3f(-halfSize,  halfSize,   halfSize);
     glEnd();
 
+    top.bind();
     glBegin(GL_QUADS);
-    top->bind();
     // Draw top side:
-    glNormal3f(0.0, 0.0, -1.0);
-    glTexCoord2f(0, 1);
-    glVertex3f(-halfSize,  halfSize,  -halfSize);
-    glTexCoord2f(1, 1);
-    glVertex3f( halfSize,  halfSize,  -halfSize);
-    glTexCoord2f(1, 0);
-    glVertex3f( halfSize,  halfSize,   halfSize);
+    glNormal3f(0.0, 1.0, 0.0);
     glTexCoord2f(0, 0);
+    glVertex3f(-halfSize,  halfSize,  -halfSize);
+    glTexCoord2f(0, 1);
+    glVertex3f( halfSize,  halfSize,  -halfSize);
+    glTexCoord2f(1, 1);
+    glVertex3f( halfSize,  halfSize,   halfSize);
+    glTexCoord2f(1, 0);
     glVertex3f(-halfSize,  halfSize,   halfSize);
     glEnd();
 
+    bot.bind();
     glBegin(GL_QUADS);
-    bot->bind();
     // Draw bot side:
-    glNormal3f(0.0, 0.0, -1.0);
+    glNormal3f(0.0, -1.0, 0.0);
     glTexCoord2f(0, 1);
     glVertex3f(-halfSize,  -halfSize,  -halfSize);
-    glTexCoord2f(1, 1);
+    glTexCoord2f(0, 0);
     glVertex3f( halfSize,  -halfSize,  -halfSize);
     glTexCoord2f(1, 0);
     glVertex3f( halfSize,  -halfSize,   halfSize);
-    glTexCoord2f(0, 0);
+    glTexCoord2f(1, 1);
     glVertex3f(-halfSize,  -halfSize,   halfSize);
     glEnd();
 
