@@ -6,7 +6,7 @@
 #include "Light.h"
 #include "DrawData.h"
 #include "UpdateData.h"
-#include "Texture.h"
+#include "Skybox.hpp"
 
 class Globals
 {
@@ -19,7 +19,6 @@ public:
     static DrawData drawData;
     static UpdateData updateData;
     //Feel free to add more member variables as needed
-    
 };
 
 #endif

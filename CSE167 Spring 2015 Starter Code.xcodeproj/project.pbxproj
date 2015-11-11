@@ -28,6 +28,7 @@
 		D42FFC661AB68012006F8E9C /* Globals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D42FFC651AB68012006F8E9C /* Globals.cpp */; };
 		D4D588151ACE591500D1F802 /* OBJObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4D588131ACE591500D1F802 /* OBJObject.cpp */; };
 		D4FEE23F1AC895C6006CF92D /* MathTestBench.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4FEE23D1AC895C6006CF92D /* MathTestBench.cpp */; };
+		E061BB8A1BF2B3AE00119A9D /* Skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E061BB881BF2B3AE00119A9D /* Skybox.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +84,8 @@
 		D4D588141ACE591500D1F802 /* OBJObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBJObject.h; sourceTree = SOURCE_ROOT; };
 		D4FEE23D1AC895C6006CF92D /* MathTestBench.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathTestBench.cpp; sourceTree = SOURCE_ROOT; };
 		D4FEE23E1AC895C6006CF92D /* MathTestBench.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTestBench.h; sourceTree = SOURCE_ROOT; };
+		E061BB881BF2B3AE00119A9D /* Skybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skybox.cpp; sourceTree = SOURCE_ROOT; };
+		E061BB891BF2B3AE00119A9D /* Skybox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Skybox.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,10 @@
 			children = (
 				D42FFC631AB67F52006F8E9C /* main.cpp */,
 				D42FFC2C1AAFCC9C006F8E9C /* Window.cpp */,
+				E061BB881BF2B3AE00119A9D /* Skybox.cpp */,
+				E061BB891BF2B3AE00119A9D /* Skybox.hpp */,
+				D42FFC4C1AAFCF71006F8E9C /* Texture.cpp */,
+				D42FFC4D1AAFCF71006F8E9C /* Texture.h */,
 				D42FFC301AAFCC9C006F8E9C /* Window.h */,
 				D42FFC651AB68012006F8E9C /* Globals.cpp */,
 				D42FFC5F1AB672A8006F8E9C /* Globals.h */,
@@ -144,8 +151,6 @@
 				D42FFC4B1AAFCF71006F8E9C /* DrawData.h */,
 				D42FFC481AAFCF71006F8E9C /* UpdateData.cpp */,
 				D42FFC491AAFCF71006F8E9C /* UpdateData.h */,
-				D42FFC4C1AAFCF71006F8E9C /* Texture.cpp */,
-				D42FFC4D1AAFCF71006F8E9C /* Texture.h */,
 				D40AFA7E1AD1E2E7008D61CC /* Shader.cpp */,
 				D40AFA7F1AD1E2E7008D61CC /* Shader.h */,
 				D42FFC381AAFCF71006F8E9C /* Vector3.cpp */,
@@ -214,6 +219,7 @@
 				D42FFC661AB68012006F8E9C /* Globals.cpp in Sources */,
 				D42FFC5C1AAFCF71006F8E9C /* Texture.cpp in Sources */,
 				D42FFC5A1AAFCF71006F8E9C /* UpdateData.cpp in Sources */,
+				E061BB8A1BF2B3AE00119A9D /* Skybox.cpp in Sources */,
 				D42FFC5B1AAFCF71006F8E9C /* DrawData.cpp in Sources */,
 				D42FFC581AAFCF71006F8E9C /* Light.cpp in Sources */,
 				D42FFC331AAFCC9C006F8E9C /* Cube.cpp in Sources */,

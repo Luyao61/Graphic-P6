@@ -10,11 +10,11 @@
 #include "Cube.h"
 #include "Matrix4.h"
 #include "Globals.h"
+#include "Skybox.hpp"
 
 int Window::width  = 512;   //Set window width in pixels here
 int Window::height = 512;   //Set window height in pixels here
-
-
+Skybox *sky;
 void Window::initialize(void)
 {
     //Setup the light
@@ -28,17 +28,7 @@ void Window::initialize(void)
     //Setup the cube's material properties
     Color color(0x23ff27ff);
     Globals::cube.material.color = color;
-    
-    //Texture *front = new Texture("Sahara_ft.ppm");
-
-    //front->bind();
-    glEnable(GL_TEXTURE_2D);   // enable texture mapping
-    glShadeModel(GL_SMOOTH);   // enable smooth shading
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);  // black background
-    glClearDepth(1.0f);        // depth buffer setup
-    glEnable(GL_DEPTH_TEST);   // enables depth testing
-    glDepthFunc(GL_LEQUAL);    // configure depth testing
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);          // really nice perspective calculations
+    sky= new Skybox();
 }
 
 //----------------------------------------------------------------------------
@@ -96,7 +86,7 @@ void Window::displayCallback()
     Globals::light.bind(0);
     
     //Draw the cube!
-    Globals::cube.draw(Globals::drawData);
+    sky->draw();
     
     //Pop off the changes we made to the matrix stack this frame
     glPopMatrix();
