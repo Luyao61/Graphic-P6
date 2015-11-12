@@ -11,10 +11,18 @@
 #include "Matrix4.h"
 #include "Globals.h"
 #include "Skybox.hpp"
+#include "BezierCurve.h"
 
 int Window::width  = 512;   //Set window width in pixels here
 int Window::height = 512;   //Set window height in pixels here
 Skybox *sky;
+
+Vector3 oldPoint;
+BezierCurve *b;
+int oldX, oldY;
+bool leftButton = false;
+bool rightButton = false;
+bool isDraging = false;
 void Window::initialize(void)
 {
     //Setup the light
@@ -29,6 +37,12 @@ void Window::initialize(void)
     Color color(0x23ff27ff);
     Globals::cube.material.color = color;
     sky= new Skybox();
+	Vector3 p0, p1, p2, p3;
+	p0.set(0, 0, 0);
+	p1.set(1, 1, 1);
+	p2.set(2, 2, 2);
+	p3.set(3, 3, 3);
+	b = new BezierCurve(p0, p1, p2, p3);
 }
 
 //----------------------------------------------------------------------------
@@ -85,6 +99,7 @@ void Window::displayCallback()
     //(if we didn't the light would move with the camera, why is that?)
     Globals::light.bind(0);
     
+	b->draw();
     //Draw the cube!
     sky->draw();
     
@@ -142,5 +157,64 @@ void Window::processNormalKeys(unsigned char key, int x, int y) {
 //TODO: Function Key callbacks!
 
 //TODO: Mouse callbacks!
+void Window::processMouse(int button, int state, int x, int y) {
+	if (button == GLUT_LEFT_BUTTON) {
+		if (state == GLUT_DOWN) { // left mouse button pressed
+			isDraging = true;
+			leftButton = true;
+		}
+		else { /* (state = GLUT_UP) */
+			isDraging = false;
+			leftButton = false;
+		}
+	}
+	else if (button == GLUT_RIGHT_BUTTON) {
+		if (state == GLUT_DOWN) { // left mouse button pressed
+			isDraging = true;
+			rightButton = true;
 
+			oldX = x;
+			oldY = y;
+		}
+		else { /* (state = GLUT_UP) */
+			isDraging = false;
+			rightButton = false;
+		}
+	}
+}
 //TODO: Mouse Motion callbacks!
+void Window::processMotion(int x, int y) {
+	Vector3 currPoint;
+	Vector3 direction;
+	if (isDraging) {
+		if (leftButton && !rightButton) {
+			currPoint = trackObjMapping(x, y);
+			direction = currPoint - oldPoint;
+			Vector3 rotateAxis;
+			float rotateAngle;
+			rotateAxis = currPoint.cross(oldPoint);
+			rotateAngle = oldPoint.angle(currPoint);
+
+			//Globals::cube.makeRotateArbitrary(rotateAxis, rotateAngle);
+		}
+		else if (!leftButton && rightButton) {
+			//Globals::cube.makeTranslate((x - oldX) / 10.0, (oldY - y) / 10.0, 0.0);
+		}
+	}
+	oldPoint = currPoint;
+	oldX = x;
+	oldY = y;
+}
+
+//map 2D coordinate to real world 3D coordinate
+Vector3 Window::trackObjMapping(int x, int y) {
+	Vector3 v;
+	float d;
+	v.set((2.0*x - width) / width, (height - 2.0*y) / height, 0.0);
+	d = v.magnitude();
+	d = (d<1.0) ? d : 1.0;
+
+	v.set((2.0*x - width) / width, (height - 2.0*y) / height, sqrtf(1.001 - d*d));
+	v = v.normalize();
+	return v;
+}
