@@ -1,5 +1,10 @@
 #ifndef CSE167_Vector3_h
 #define CSE167_Vector3_h
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
 
 #include <string>
 
@@ -16,6 +21,7 @@ public:
     
     Vector3();
     Vector3(float, float, float);
+    Vector3(GLfloat[3]);
     virtual ~Vector3(void);
     
     float* ptr();

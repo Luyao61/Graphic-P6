@@ -29,6 +29,8 @@
 		D4D588151ACE591500D1F802 /* OBJObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4D588131ACE591500D1F802 /* OBJObject.cpp */; };
 		D4FEE23F1AC895C6006CF92D /* MathTestBench.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4FEE23D1AC895C6006CF92D /* MathTestBench.cpp */; };
 		E061BB8A1BF2B3AE00119A9D /* Skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E061BB881BF2B3AE00119A9D /* Skybox.cpp */; };
+		E0CA02411BF43FE800E613F3 /* BezierCurve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0CA023F1BF43FE800E613F3 /* BezierCurve.cpp */; };
+		E0CA02441BF4461300E613F3 /* BezierPatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0CA02421BF4461300E613F3 /* BezierPatch.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +88,12 @@
 		D4FEE23E1AC895C6006CF92D /* MathTestBench.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTestBench.h; sourceTree = SOURCE_ROOT; };
 		E061BB881BF2B3AE00119A9D /* Skybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skybox.cpp; sourceTree = SOURCE_ROOT; };
 		E061BB891BF2B3AE00119A9D /* Skybox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Skybox.hpp; sourceTree = SOURCE_ROOT; };
+		E0CA023F1BF43FE800E613F3 /* BezierCurve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierCurve.cpp; sourceTree = SOURCE_ROOT; };
+		E0CA02401BF43FE800E613F3 /* BezierCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierCurve.h; sourceTree = SOURCE_ROOT; };
+		E0CA02421BF4461300E613F3 /* BezierPatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BezierPatch.cpp; sourceTree = SOURCE_ROOT; };
+		E0CA02431BF4461300E613F3 /* BezierPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPatch.h; sourceTree = SOURCE_ROOT; };
+		E0CA02491BF55A6F00E613F3 /* sample.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sample.frag; sourceTree = SOURCE_ROOT; };
+		E0CA024A1BF55A6F00E613F3 /* sample.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sample.vert; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,12 @@
 		D42FFC201AAFC90E006F8E9C /* CSE167 Spring 2015 Starter Code */ = {
 			isa = PBXGroup;
 			children = (
+				E0CA02491BF55A6F00E613F3 /* sample.frag */,
+				E0CA024A1BF55A6F00E613F3 /* sample.vert */,
+				E0CA02421BF4461300E613F3 /* BezierPatch.cpp */,
+				E0CA02431BF4461300E613F3 /* BezierPatch.h */,
+				E0CA023F1BF43FE800E613F3 /* BezierCurve.cpp */,
+				E0CA02401BF43FE800E613F3 /* BezierCurve.h */,
 				D42FFC631AB67F52006F8E9C /* main.cpp */,
 				D42FFC2C1AAFCC9C006F8E9C /* Window.cpp */,
 				E061BB881BF2B3AE00119A9D /* Skybox.cpp */,
@@ -231,11 +245,13 @@
 				D42FFC551AAFCF71006F8E9C /* Camera.cpp in Sources */,
 				D42FFC321AAFCC9C006F8E9C /* Window.cpp in Sources */,
 				D42FFC5D1AAFCF71006F8E9C /* Material.cpp in Sources */,
+				E0CA02411BF43FE800E613F3 /* BezierCurve.cpp in Sources */,
 				D4FEE23F1AC895C6006CF92D /* MathTestBench.cpp in Sources */,
 				D42FFC5E1AAFCF71006F8E9C /* Vector4.cpp in Sources */,
 				D42FFC591AAFCF71006F8E9C /* Sphere.cpp in Sources */,
 				D40AFA801AD1E2E7008D61CC /* Shader.cpp in Sources */,
 				D42FFC311AAFCC9C006F8E9C /* Matrix4.cpp in Sources */,
+				E0CA02441BF4461300E613F3 /* BezierPatch.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,11 @@ Vector3::Vector3(float m0, float m1, float m2)
     m[1] = m1;
     m[2] = m2;
 }
+Vector3::Vector3(GLfloat gl[3]){
+    m[0] = gl[0];
+    m[1] = gl[1];
+    m[2] = gl[2];
+}
 
 Vector3::~Vector3()
 {

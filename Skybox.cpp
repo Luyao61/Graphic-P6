@@ -27,7 +27,7 @@ Skybox::~Skybox(){
 }
 
 void Skybox::draw(){
-    float halfSize = 1200/2.0;
+    float halfSize = 1000/2.0;
     
     
     //Set the OpenGL Matrix mode to ModelView (used when drawing geometry)
@@ -123,8 +123,6 @@ void Skybox::draw(){
 	glVertex3f(halfSize, -halfSize, halfSize);
     glTexCoord2f(0, 0);
     glVertex3f( halfSize,  -halfSize,  -halfSize);
-
-
     glEnd();
 
     

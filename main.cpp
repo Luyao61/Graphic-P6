@@ -40,6 +40,10 @@ int main(int argc, char *argv[])
     //glEnable(GL_LIGHTING);                                      //Enable lighting
     glEnable(GL_NORMALIZE);                                     //Auto normalize surface normals
     glEnable(GL_TEXTURE_2D);                                    //Enable 2D textures
+    
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
     glLightModelf(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);        //Enable Local Viewer Light Model
     
     //Register callback functions:

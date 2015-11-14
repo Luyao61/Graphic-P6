@@ -12,6 +12,9 @@
 #include "Globals.h"
 #include "Skybox.hpp"
 #include "BezierCurve.h"
+#include "BezierPatch.h"
+#include "Shader.h"
+#include <math.h>
 
 int Window::width  = 512;   //Set window width in pixels here
 int Window::height = 512;   //Set window height in pixels here
@@ -19,10 +22,16 @@ Skybox *sky;
 
 Vector3 oldPoint;
 BezierCurve *b;
+BezierPatch *p;
 int oldX, oldY;
 bool leftButton = false;
 bool rightButton = false;
 bool isDraging = false;
+
+Shader *shader;
+
+int t;
+
 void Window::initialize(void)
 {
     //Setup the light
@@ -38,11 +47,26 @@ void Window::initialize(void)
     Globals::cube.material.color = color;
     sky= new Skybox();
 	Vector3 p0, p1, p2, p3;
-	p0.set(0, 0, 0);
-	p1.set(1, 1, 1);
-	p2.set(2, 2, 2);
-	p3.set(3, 3, 3);
+	p0.set(-4, -4, 0);
+	p1.set(-2, 4, 0);
+	p2.set(2, -4, 0);
+	p3.set(4, 4, 0);
 	b = new BezierCurve(p0, p1, p2, p3);
+    /*
+    GLfloat ctrlpoints[4][4][3] = {
+        {{-1.5, -1.5, 4.0}, {-0.5, -1.5, 2.0},
+            {0.5, -1.5, -1.0}, {1.5, -1.5, 2.0}},
+        {{-1.5, -0.5, 1.0}, {-0.5, -0.5, 3.0},
+            {0.5, -0.5, 0.0}, {1.5, -0.5, -1.0}},
+        {{-1.5, 0.5, 4.0}, {-0.5, 0.5, 0.0},
+            {0.5, 0.5, 3.0}, {1.5, 0.5, 4.0}},
+        {{-1.5, 1.5, -2.0}, {-0.5, 1.5, -2.0},
+            {0.5, 1.5, 0.0}, {1.5, 1.5, -1.0}}
+    };*/
+
+    p = new BezierPatch();
+    
+    shader = new Shader("sample.vert", "sample.frag", true);
 }
 
 //----------------------------------------------------------------------------
@@ -79,6 +103,7 @@ void Window::reshapeCallback(int w, int h)
 // Callback method called by GLUT when window readraw is necessary or when glutPostRedisplay() was called.
 void Window::displayCallback()
 {
+    t=glutGet(GLUT_ELAPSED_TIME);
     //Clear color and depth buffers
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
@@ -99,13 +124,18 @@ void Window::displayCallback()
     //(if we didn't the light would move with the camera, why is that?)
     Globals::light.bind(0);
     
-	b->draw();
     //Draw the cube!
     sky->draw();
     
+    p->update(t);
+    
+    shader->bind();
+    p->draw();
+    shader->unbind();
+
     //Pop off the changes we made to the matrix stack this frame
     glPopMatrix();
-    
+
     //Tell OpenGL to clear any outstanding commands in its command buffer
     //This will make sure that all of our commands are fully executed before
     //we swap buffers and show the user the freshly drawn frame
